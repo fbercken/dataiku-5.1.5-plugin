@@ -1,12 +1,11 @@
 {
     "meta": {
-        "label": "Custom runnable my-macro",
+        "label": "Add new cluster",
         "description": "",
         "icon": "icon-puzzle-piece"
     },
     "impersonate": false,
-    "params": [
-    ],
+    "params": [],
     "permissions": [],
     "resultType": "HTML",
     "resultLabel": "my production",
