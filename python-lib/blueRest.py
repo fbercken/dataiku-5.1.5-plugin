@@ -3,7 +3,6 @@ import requests
 
 class BlueData(object):
    
-
     def _sessionExists(self):
         return True if self.headers['X-BDS-SESSION'] != null else False;
         
