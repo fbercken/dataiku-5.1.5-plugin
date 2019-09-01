@@ -9,7 +9,7 @@ def connect(config,):
     return {'tenants': tenants, 'applications': [] }
   
 def applications(config):
-    tenant = config.selectedTenant
+    tenant = config["selectedTenant"]
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     #applications = restClient.getApplications()
     applications =  restClient.getTenants()
