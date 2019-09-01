@@ -47,7 +47,6 @@ class BlueData(object):
         print("zz")
         response = self._invoke( "/api/v2/session/", self.session, "POST")
       #  self.headers['X-BDS-SESSION'] = response.headers['Location']
-        print("eee")
         print(response)
 
 
