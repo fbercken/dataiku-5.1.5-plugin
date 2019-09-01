@@ -11,7 +11,7 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
-        restClient = BlueData(config)
+        restClient = BlueData(self.config)
         restClient.connect()
         
         
