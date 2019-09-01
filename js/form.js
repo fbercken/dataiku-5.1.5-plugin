@@ -2,9 +2,9 @@ var app = angular.module('myplugin.module', []);
 
 app.controller('MyCustomFormController', function($scope) {
     
-    $scope.hostname = "35.177.158.117"
-    $scope.username = "admin"
-    $scope.password = "admin123"
+    $scope.config.hostname = "35.177.158.117"
+    $scope.config.username = "admin"
+    $scope.config.password = "admin123"
     
     $scope.connect = function(config) {
         if ( config.hostname ) {
