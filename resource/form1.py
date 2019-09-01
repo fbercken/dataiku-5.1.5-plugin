@@ -1,7 +1,7 @@
 from blueRest import BlueData
 
 
-//restClient = restClient if restClient else {}
+#restClient = restClient if restClient else {}
 
 
 
