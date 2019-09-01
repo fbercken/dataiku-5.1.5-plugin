@@ -21,7 +21,6 @@ class BlueData(object):
                      response.raise_for_status()
              except IOError:
                  count += 1
-                 #response.raise_for_status()
                  time.sleep(5)
         return response
 
