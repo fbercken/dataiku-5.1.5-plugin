@@ -1,8 +1,7 @@
 from blueRest import BlueData
 
 
-restClient = {} 
-#if restClient is None else restClient
+restClient = restClient if restClient else {}
 
 
 
