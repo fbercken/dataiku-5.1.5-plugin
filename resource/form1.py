@@ -9,7 +9,8 @@ def connect(config,):
     return {'tenants': tenants }
   
 def applications(config):
-    #restClient.setTenant( "/api/v2/tenant/2", "Site Admin")
+    tenant = config.
+    #restClient.setTenant( tenant['_links']['self']['href'], tenant)
     #applications = restClient.getApplications()
     return { "applications": applications }
 
