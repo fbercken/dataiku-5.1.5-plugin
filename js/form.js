@@ -27,7 +27,6 @@ app.controller('MyCustomFormController', function($scope) {
   
 
     var tenantChange = function() {
-         console.log("ggg")
         if ( $scope.config.selectedTenant ) {
             $scope.callPythonDo({ "method": "applications" }).then(function(data) {
                 $scope.applications = data.applications;
