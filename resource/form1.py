@@ -5,8 +5,8 @@ restClient = {}
 def connect(config):
     restClient = BlueData( { "hostname": config["hostname"], "user": config["username"], "password": config["password"] } )
     restClient.connect()
-    sessionid = restClient.getSessionId()
     tenants = restClient.getTenants()
+    sessionid = restClient.getSessionId()
     return { 'sessionid': sessionid, 'tenants': tenants, 'applications': [] }
   
 def applications(config):
