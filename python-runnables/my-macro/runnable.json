@@ -1,7 +1,7 @@
 {
     "meta": {
-        "label": "Add Cluster into BlueData tenant",
-        "description": "Add a cluster into BlueData tenant",
+        "label": "Create Cluster into BlueData tenant",
+        "description": "Create a new cluster by selecting a template defined into the selected tenant.",
         "icon": "icon-puzzle-piece"
     },
     "impersonate": false,
