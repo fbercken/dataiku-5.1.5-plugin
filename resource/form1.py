@@ -2,6 +2,8 @@ from blueRest import BlueData
 
 restClient = restClient or {} if restClient is None else restClient
 
+
+
 def connect(config):
     restClient = BlueData( { "hostname": config["hostname"], "user": config["username"], "password": config["password"] } )
     restClient.connect()
