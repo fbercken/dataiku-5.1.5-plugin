@@ -6,7 +6,7 @@ from blueRest import BlueData
 
 
 def connect(config):
-    restClient = BlueData( { "hostname": config["hostname"], "user": config["username"], "password": config["password"] } )
+    restClient = BlueData( { "hostname": config["hostname"], "username": config["username"], "password": config["password"] } )
     restClient.connect()
     tenants = restClient.getTenants()
     sessionid = restClient.getSessionId()
