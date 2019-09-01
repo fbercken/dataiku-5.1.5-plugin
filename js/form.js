@@ -10,8 +10,8 @@ app.controller('MyCustomFormController', function($scope) {
     $scope.connect = function() {
         if ( $scope.config.hostname ) {
             $scope.callPythonDo({ "method": "connect" }).then(function(data) {
+                $scope.tenants = data.tenants
                 $scope.config.sessionid = data.sessionid
-                $scope.tenants = data.tenants;
                 $scope.config.selectedTenant = $scope.tenants[0]
                 $scope.tenantChange()
                 console.log(data)
