@@ -46,7 +46,7 @@
         <div class="control-group" >
             <label class="control-label">Template name</label>
             <div class="controls" >
-                <select ng-model="config.selectedApplication" ng-required="true" ng-options="v for v in applications" />
+                <select ng-model="config.selectedApplication" ng-required="true" ng-options="v as v['_embedded']['label'] for v in applications" />
                 <span class="help-inline">Select the BlueData Application template to install</span>
             </div>
         </div>
