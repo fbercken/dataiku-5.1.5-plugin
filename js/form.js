@@ -6,13 +6,13 @@ app.controller('MyCustomFormController', function($scope) {
         if ( config.hostname ) {
             $scope.callPythonDo({ "method": "connect"}).then(function(data) {
                 $scope.tenants = data.tenants;
+                console.log(data)
             }, function(data) {
                 $scope.tenants = [];
             });
         } else {
             $scope.tenants = [] 
         }
-        console.log(data)
     };
 
     var updateApplications = function() {
