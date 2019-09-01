@@ -6,25 +6,29 @@ app.controller('MyCustomFormController', function($scope) {
     $scope.config.username = "admin"
     $scope.config.password = "admin123"
     
-    $scope.connect = function(config) {
-        if ( config.hostname ) {
+    $scope.connect = function() {
+        if ( $scope.config.hostname ) {
             $scope.callPythonDo({ "method": "connect" }).then(function(data) {
                 $scope.tenants = data.tenants;
                 $scope.config.selectedTenant = $scope.tenants[0]
+                $scope.tenantChange()
                 console.log(data)
             }, function(data) {
                 $scope.tenants = [];
+                $scope.applications = [] 
             });
         } else {
             $scope.tenants = [] 
+            $scope.applications = [] 
         }
     };
   
 
     var tenantChange = function() {
-        if ( $scope.config.tenant ) {
-            $scope.callPythonDo({}).then(function(data) {
+        if ( $scope.config.selectedTenant ) {
+            $scope.callPythonDo({ "method": "applications" }).then(function(data) {
                 $scope.applications = data.applications;
+                console.log(data)
             }, function(data) {
                 $scope.applications = [];
             });
