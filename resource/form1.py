@@ -6,13 +6,13 @@ def connect(config,):
     restClient = BlueData( { "hostname": config["hostname"], "user": config["username"], "password": config["password"] } )
     restClient.connect()
     tenants = restClient.getTenants()
-    return {'tenants': tenants }
+    return {'tenants': tenants, 'applications': [] }
   
 def applications(config):
     tenant = config.selectedTenant
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     #applications = restClient.getApplications()
-    applications = []
+    applications =  restClient.getTenants()
     return { "applications": applications }
 
 actions = {
