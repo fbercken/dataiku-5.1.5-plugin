@@ -1,5 +1,7 @@
 from blueRest import BlueData
 
+restClient = {}
+
 def do(payload, config, plugin_config, inputs):
     
     if ( payload["method"] == "connect"):
@@ -7,5 +9,8 @@ def do(payload, config, plugin_config, inputs):
         restClient.connect()
         tenants = restClient.getTenants()
         #[ restClient.headers['X-BDS-SESSION'] ]
-    #tenants = [ "ff" ]
+        
+        
+        #restClient.setTenant( "/api/v2/tenant/2", "Site Admin")
+
     return {'tenants': tenants, "method": payload, "config": config, "plugin_config": plugin_config, "inputs": inputs }
