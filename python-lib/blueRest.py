@@ -69,7 +69,13 @@ class BlueData(object):
         else: 
             return []
 
-    def createApplication(self,application):
-        pass
+    def createCluster(self,template):
+        data = { "label": "", "nodegroup": }
+        response = self._invoke("/api/v2/cluster/", data, "POST")
+        if response.ok:
+            data = json.loads(response.content)
+            return data["_embedded"]["tenants"]
+        else: 
+            return []
 
   
