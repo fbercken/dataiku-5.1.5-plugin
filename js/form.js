@@ -2,6 +2,10 @@ var app = angular.module('myplugin.module', []);
 
 app.controller('MyCustomFormController', function($scope) {
     
+    $scope.hostname = "35.177.158.117"
+    $scope.username = "admin"
+    $scope.password = "admin123"
+    
     $scope.connect = function(config) {
         if ( config.hostname ) {
             $scope.callPythonDo({ "method": "connect"}).then(function(data) {
