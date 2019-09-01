@@ -19,8 +19,9 @@ app.controller('MyCustomFormController', function($scope) {
             $scope.tenants = [] 
         }
     };
+  
 
-    var updateApplications = function() {
+    var tenantChange = function() {
         if ( $scope.config.tenant ) {
             $scope.callPythonDo({}).then(function(data) {
                 $scope.applications = data.applications;
