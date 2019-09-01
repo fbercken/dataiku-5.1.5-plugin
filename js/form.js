@@ -2,8 +2,8 @@ var app = angular.module('myplugin.module', []);
 
 app.controller('MyCustomFormController', function($scope) {
     
-    $scope.connect = function() {
-        if ( $scope.config.hostname ) {
+    $scope.connect = function(config) {
+        if ( config.hostname ) {
             $scope.callPythonDo({}).then(function(data) {
                 $scope.tenants = data.tenants;
             }, function(data) {
