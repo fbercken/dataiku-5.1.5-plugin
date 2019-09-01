@@ -25,11 +25,11 @@
         </div>   
         <div class="control-group" >
             <div class="controls" >          
-            <button ng-disabled="cluster.hostname != null" type="button" class="btn btn-danger btn-cta-big-mod ng-scope" ng-click="alert('ggg')">Connect</button>
+            <button ng-disabled="cluster.hostname != null" type="button" class="btn btn-danger btn-cta-big-mod ng-scope" ng-click="connect(config)">Connect</button>
             </div>
         </div>
     </div>
-    
+
     <div class="section" ng-if="config.hostname != null"> 
         <h2>BlueData Tenant</h2>
         <div class="control-group" >
