@@ -10,7 +10,9 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
+        restClient = BlueData(config)
+        restClient.connect()
         
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
