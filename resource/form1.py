@@ -7,4 +7,4 @@ def do(payload, config, plugin_config, inputs):
     
     tenants = [ restClient.headers['X-BDS-SESSION'] ]
     
-    return {'tenants' : tenants, "method": payload}
+    return {'tenants' : tenants, "method": payload, "config": config }
