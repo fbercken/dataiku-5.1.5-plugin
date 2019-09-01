@@ -35,7 +35,7 @@
         <div class="control-group" >
             <label class="control-label">Tenant Name</label>
             <div class="controls" >
-                <select ng-model="config.selectedTenant" ng-required="true" ng-options="v as v["label"]["name""] for v in tenants track by v["_links"]["self"]["href"]" />
+                <select ng-model="config.selectedTenant" ng-required="true" ng-options="v as v['label']['name'] for v in tenants track by v['_links']['self']['href']" />
                 <span class="help-inline">Select the BlueData tenant</span>
             </div>
         </div>
