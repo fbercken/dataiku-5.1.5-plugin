@@ -2,11 +2,12 @@ from blueRest import BlueData
 
 restClient = {}
 
-def connect(config,):
+def connect(config):
     restClient = BlueData( { "hostname": config["hostname"], "user": config["username"], "password": config["password"] } )
     restClient.connect()
+    sessionid = restClient.getSessionId()
     tenants = restClient.getTenants()
-    return {'tenants': tenants, 'applications': [] }
+    return { 'sessionid': sessionid, 'tenants': tenants, 'applications': [] }
   
 def applications(config):
     tenant = config["selectedTenant"]
