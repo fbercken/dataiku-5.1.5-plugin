@@ -25,5 +25,4 @@ actions = {
 def do(payload, config, plugin_config, inputs):
     
     return actions[payload["method"]](config)
-    
     #return {'tenants': tenants, "method": payload, "config": config, "plugin_config": plugin_config, "inputs": inputs }
