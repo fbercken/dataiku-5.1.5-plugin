@@ -23,9 +23,6 @@
                 <span class="help-inline">Enter the BlueData Password</span>
             </div>
         </div>   
-        <div>
-             <input type="hidden" ng-model="config.sessionid" bs-typeahead="columnsPerInputRole['input_role']" />
-        </div>
         <div class="control-group" >
             <div class="controls" >          
             <button ng-disabled="cluster.hostname != null" type="button" class="btn btn-danger btn-cta-big-mod ng-scope" ng-click="connect()">Connect</button>
