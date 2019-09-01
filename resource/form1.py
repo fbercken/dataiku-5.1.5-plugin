@@ -12,6 +12,7 @@ def applications(config):
     tenant = config.selectedTenant
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     #applications = restClient.getApplications()
+    applications = []
     return { "applications": applications }
 
 actions = {
