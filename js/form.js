@@ -26,8 +26,8 @@ app.controller('MyCustomFormController', function($scope) {
         }
     };
     
-    updateTenants();
-    $scope.$watch('config.hostname', updateTenants);
+  //  updateTenants();
+    $scope.$watch('config.tenants', updateApplications);
 });
 
 
