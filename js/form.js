@@ -5,6 +5,7 @@ app.controller('MyCustomFormController', function($scope) {
     $scope.config.hostname = "35.177.158.117"
     $scope.config.username = "admin"
     $scope.config.password = "admin123"
+    $scope.config.sessionid = ""
     
     $scope.connect = function() {
         if ( $scope.config.hostname ) {
