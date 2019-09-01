@@ -15,6 +15,8 @@ def connect(config):
   
     
 def applications(config):
+    restClient = BlueData(config)
+    restClient.connect()
     tenant = config["selectedTenant"]
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     #applications = restClient.getApplications()
