@@ -1,5 +1,6 @@
 from blueRest import BlueData
 
+
 restClient = {} if restClient is None else restClient
 
 
@@ -11,12 +12,14 @@ def connect(config):
     sessionid = restClient.getSessionId()
     return { 'sessionid': sessionid, 'tenants': tenants, 'applications': [] }
   
+    
 def applications(config):
     tenant = config["selectedTenant"]
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     #applications = restClient.getApplications()
     applications = [] #restClient.getTenants()
     return { "applications": applications }
+
 
 actions = {
     "connect": connect,
