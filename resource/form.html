@@ -36,7 +36,7 @@
             <label class="control-label">Tenant Name</label>
             <div class="controls" >
                 <select ng-model="config.selectedTenant" ng-required="true" ng-options="v as v["label"]["name""] for v in tenants track by v["_links"]["self"]["href"]" />
-                <span class="help-inline">Select the BlueData tenant in which you want to create the new Cluster</span>
+                <span class="help-inline">Select the BlueData tenant</span>
             </div>
         </div>
     </div>
