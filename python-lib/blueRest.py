@@ -32,7 +32,7 @@ class BlueData(object):
         self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "tenant": "/api/v2/tenant/1", "role": "/api/v1/role/1", "site_admin_view ": True }
-        self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json", 'X-BDS-SESSION': self.sessionid }
+        self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json", "X-BDS-SESSION": self.sessionid }
 
 
     def connect(self):
