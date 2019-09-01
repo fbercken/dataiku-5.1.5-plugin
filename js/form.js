@@ -1,8 +1,8 @@
 var app = angular.module('myplugin.module', []);
 
 app.controller('MyCustomFormController', function($scope) {
-
-    var updateTenants = function() {
+    
+    var connect = function() {
         if ( $scope.config.hostname ) {
             $scope.callPythonDo({}).then(function(data) {
                 $scope.tenants = data.tenants;
@@ -11,6 +11,18 @@ app.controller('MyCustomFormController', function($scope) {
             });
         } else {
             $scope.tenants = [] 
+        }
+    };
+
+    var updateApplications = function() {
+        if ( $scope.config.tenant ) {
+            $scope.callPythonDo({}).then(function(data) {
+                $scope.applications = data.applications;
+            }, function(data) {
+                $scope.applications = [];
+            });
+        } else {
+            $scope.applications = [] 
         }
     };
     
