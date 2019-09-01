@@ -29,6 +29,7 @@ app.controller('MyCustomFormController', function($scope) {
         if ( $scope.config.selectedTenant ) {
             $scope.callPythonDo({ "method": "applications" }).then(function(data) {
                 $scope.applications = data.applications;
+                $scope.config.selectedApplication = $scope.applications[0]
                 console.log(data)
             }, function(data) {
                 $scope.applications = [];
