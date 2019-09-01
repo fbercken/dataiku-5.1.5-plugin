@@ -10,7 +10,7 @@ app.controller('MyCustomFormController', function($scope) {
         if ( config.hostname ) {
             $scope.callPythonDo({ "method": "connect" }).then(function(data) {
                 $scope.tenants = data.tenants;
-                $scope.config. = $scope.tenants[0]
+                $scope.config.selectedTenant = $scope.tenants[0]
                 console.log(data)
             }, function(data) {
                 $scope.tenants = [];
