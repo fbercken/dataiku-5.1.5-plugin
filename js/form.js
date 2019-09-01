@@ -12,7 +12,7 @@ app.controller('MyCustomFormController', function($scope) {
         } else {
             $scope.tenants = [] 
         }
-        console.log($scope)
+        console.log(data)
     };
 
     var updateApplications = function() {
