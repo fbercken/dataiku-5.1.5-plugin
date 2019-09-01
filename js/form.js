@@ -39,7 +39,7 @@ app.controller('MyCustomFormController', function($scope) {
     };
     
   //  updateTenants();
-    $scope.$watch('config.tenants', tenantChange);
+    $scope.$watch('config.selectedTenant', tenantChange);
 });
 
 
