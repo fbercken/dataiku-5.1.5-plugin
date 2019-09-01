@@ -1,6 +1,6 @@
 {
     "meta": {
-        "label": "Add Cluster",
+        "label": "Add Cluster into BlueData tenant",
         "description": "Add a cluster into BlueData tenant",
         "icon": "icon-puzzle-piece"
     },
