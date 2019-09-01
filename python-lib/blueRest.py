@@ -30,15 +30,17 @@ class BlueData(object):
     def __init__(self, config, retries=10):
         self.config = config
         self.retries = retries
+        self.sessionid = config.sessionid
         self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "tenant": "/api/v2/tenant/1", "role": "/api/v1/role/1", "site_admin_view ": True }
-        self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
+        self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json", 'X-BDS-SESSION': self.sessionid }
 
 
     def connect(self):
-        response = self._invoke( "/api/v2/session/", self.user, "POST")  	
-        self.headers['X-BDS-SESSION'] = response.headers['Location']
+        response = self._invoke( "/api/v2/session/", self.user, "POST")
+        self.sessionid = response.headers['Location']
+        self.headers['X-BDS-SESSION'] = self.sessionid 
 
 
     def setTenant(self,tenantKey="/api/v2/tenant/1",tenantName="Site Admin"):
