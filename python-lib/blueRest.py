@@ -29,7 +29,7 @@ class BlueData(object):
     def __init__(self, config, retries=10):
         self.config = config
         self.retries = retries
-        self.sessionid = config['sessionid']
+        self.sessionid = config['sessionid'] or ""
         self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "tenant": "/api/v2/tenant/1", "role": "/api/v1/role/1", "site_admin_view ": True }
