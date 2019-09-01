@@ -19,7 +19,6 @@ class BlueData(object):
                      return response
                  else:
                      response.raise_for_status()
-                     print("error")
              except IOError:
                  count += 1
                  #response.raise_for_status()
