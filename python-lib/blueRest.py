@@ -5,6 +5,9 @@ class BlueData(object):
    
     def _sessionExists(self):
         return True if self.headers['X-BDS-SESSION'] != null else False;
+    
+    def getSessionId(self):
+        return self.headers['X-BDS-SESSION']
         
         
     def _invoke(self, path, payload={}, verb="GET"):
