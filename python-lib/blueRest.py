@@ -14,7 +14,7 @@ class BlueData(object):
         count = 0
         while count <= self.retries:
              try:
-                 response = requests.request( verb, self.url + path, headers=self.headers, data=json.dumps(payload), verify=False)
+                 response = requests.request( verb, self.base + path, headers=self.headers, data=json.dumps(payload), verify=False)
                  if response.ok:
                      return response
                  else:
@@ -30,7 +30,7 @@ class BlueData(object):
     def __init__(self, config, retries=10):
         self.config = config
         self.retries = retries
-        self.url = "http://" + config['hostname'] + ":8080"
+        self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['user'], "password": config['password'] }
         self.session = { "password": config['password'], "tenant": "/api/v2/tenant/1", "role": "/api/v1/role/1", "site_admin_view ": True }
         self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
