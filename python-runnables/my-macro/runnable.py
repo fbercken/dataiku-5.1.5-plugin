@@ -1,3 +1,4 @@
+from blueRest import BlueData
 from dataiku.runnables import Runnable
 
 class MyRunnable(Runnable):
