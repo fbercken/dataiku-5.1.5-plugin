@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="section" ng-if="config.hostname != null"> 
+    <div class="section" ng-disabled="config.hostname == null"> 
         <h2>Tenant</h2>
         <div class="control-group" >
             <label class="control-label">Tenant Name</label>
