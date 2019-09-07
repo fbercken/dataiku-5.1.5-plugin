@@ -1,10 +1,6 @@
 from blueRest import BlueData
 
 
-#restClient = restClient if restClient else {}
-
-
-
 def connect(config):
     restClient = BlueData(config)
     #{ "hostname": config["hostname"], "username": config["username"], "password": config["password"] } )
