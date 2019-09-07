@@ -14,5 +14,5 @@
     
     "paramsTemplate" : "form.html",
     "paramsModule" : "myplugin.module",
-    "paramsPythonSetup" : "form1.py"
+    "paramsPythonSetup" : "form.py"
 }
