@@ -28,7 +28,7 @@ app.controller('MyCustomFormController', function($scope) {
 
     var tenantChange = function() {
         if ( $scope.config.selectedTenant ) {
-            $scope.callPythonDo({ "method": "applications" }).then(function(data) {
+            $scope.callPythonDo({ "method": "templates" }).then(function(data) {
                 $scope.templates = data.templates;
                 $scope.config.selectedTemplate = $scope.templates[0]
                 console.log(data)
