@@ -51,6 +51,7 @@ app.controller('MyCustomFormController', function($scope) {
     
   //  updateTenants();
     $scope.$watch('config.selectedTenant', tenantChange);
+    $scope.$watch('config.selectedTemplate', templateChange);
 });
 
 
