@@ -22,7 +22,7 @@ class BlueData(object):
              except IOError:
                  count += 1
                  time.sleep(5)
-        return response
+        return {"error": "zz"}
 
 
     def __init__(self, config, retries=10):
