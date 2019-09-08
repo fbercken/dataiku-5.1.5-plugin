@@ -5,6 +5,11 @@ app.controller('MyCustomFormController', function($scope) {
     $scope.config.hostname = "35.177.158.117"
     $scope.config.username = "admin"
     $scope.config.password = "admin123"
+    $scope.config.selectedTenant = null
+    $scope.config.selectedTemplate = null
+    $scope.config.clustername = ""
+    $scope.config.clusterdescription = ""
+    
     $scope.config.sessionid = ""
     
     $scope.connect = function() {
