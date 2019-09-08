@@ -48,6 +48,7 @@ app.controller('MyCustomFormController', function($scope) {
             });
         } else {
             $scope.templates = [] 
+            $scope.config.selectedTemplate = null
         }
     };
     
