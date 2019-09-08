@@ -41,7 +41,6 @@ app.controller('MyCustomFormController', function($scope) {
                 $scope.templates = data.templates;
                 $scope.config.selectedTemplate = $scope.templates[0]
                 $scope.templateChange()
-                console.log(data)
             }, function(data) {
                 $scope.templates = [];
             });
