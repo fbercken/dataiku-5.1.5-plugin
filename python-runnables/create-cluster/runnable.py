@@ -18,7 +18,7 @@ class MyRunnable(Runnable):
         clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
         clusterGroup = clusterSpec['nodegroup']
         
-        #data = restClient.createCluster( clusterLabel, clusterGroup)
+        data = restClient.createCluster( clusterLabel, clusterGroup)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
