@@ -31,7 +31,7 @@ class BlueData(object):
         #self.sessionid = config['sessionid'] or ""
         self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['username'], "password": config['password'] }
-        self.session = { "password": config['password'], "tenant": "/api/v2/tenant/1", "role": "/api/v1/role/1", "site_admin_view": True }
+        self.session = { "password": config['password'], "site_admin_view": True }
         self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
      #   if config['sessionid'] != "" :
      #       self.headers["X-BDS-SESSION"] = config['sessionid']
@@ -44,7 +44,7 @@ class BlueData(object):
 
 
     def setTenant(self,tenantKey="/api/v2/tenant/1",tenantName="Site Admin"):
-        self.session["tenant"] = tenantKey
+      #  self.session["tenant"] = tenantKey
         self.session["tenant_name"] = tenantName
         response = self._invoke( "/api/v2/session/", self.session, "POST")
       #  self.headers['X-BDS-SESSION'] = response.headers['Location']
@@ -60,7 +60,7 @@ class BlueData(object):
             return []
 
 
-    def getApplications(self):
+    def getTemplates(self):
         response = self._invoke("/api/v2/template/")
         print(response)
         if response.ok:
