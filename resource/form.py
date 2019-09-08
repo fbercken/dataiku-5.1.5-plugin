@@ -7,22 +7,22 @@ def connect(config):
     restClient.connect()
     tenants = restClient.getTenants()
     sessionid = restClient.getSessionId()
-    return { 'sessionid': sessionid, 'tenants': tenants, 'applications': [] }
+    return { 'sessionid': sessionid, 'tenants': tenants, 'templates': [] }
   
     
-def applications(config):
+def templates(config):
     restClient = BlueData(config)
     restClient.connect()
     tenant = config["selectedTenant"]
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
-    #applications = restClient.getApplications()
-    applications = restClient.getTenants()
-    return { "applications": applications }
+    templates = restClient.getTemplates()
+    #applications = restClient.getTenants()
+    return { "templates": templates }
 
 
 actions = {
     "connect": connect,
-    "applications": applications
+    "templates": templates
 }
 
 
