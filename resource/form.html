@@ -48,7 +48,7 @@
         <div class="control-group" >
             <label class="control-label">Template name</label>
             <div class="controls" >
-                <select ng-model="config.selectedTemplate" ng-required="true" ng-options="v as v['_embedded']['label']['name'] for v in templates track by v" />
+                <select ng-model="config.selectedTemplate" ng-required="true" ng-options="v as v['_embedded']['label']['name'] for (k,v) in templates" />
                 <span class="help-inline">Select the template in the selected tenant</span>
             </div>
         </div>
