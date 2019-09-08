@@ -62,7 +62,6 @@ class BlueData(object):
 
     def getTemplates(self):
         response = self._invoke("/api/v2/template/")
-        print(response)
         if response.ok:
             data = json.loads(response.content)
             return data["_embedded"]["templates"]
