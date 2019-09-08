@@ -40,6 +40,15 @@ app.controller('MyCustomFormController', function($scope) {
         }
     };
     
+    
+    var templateChange = function() {
+        if ( $scope.selectedTemplate ) {
+            currentTemplate = $scope.selectedTemplate
+            $scope.config.clustername = currentTemplate['label']['name']
+            $scope.config.clusterdescription = currentTemplate['label']['description']
+        }
+    }
+    
   //  updateTenants();
     $scope.$watch('config.selectedTenant', tenantChange);
 });
