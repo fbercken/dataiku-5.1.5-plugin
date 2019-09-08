@@ -20,7 +20,24 @@ class MyRunnable(Runnable):
         clusterSpec['label'] = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
         #clusterGroup = clusterSpec['nodegroup']
         
-        data = restClient.createCluster( clusterSpec)
+        zz = {
+            "label": { "name": "err", "description": "ddd"},
+            "nodegroup": {
+                "role_configs": [
+                    {"node_count": 1, "flavor_name": "Medium", "role_id": "controller"}, 
+                    {"node_count": 1, "flavor_name": "Small", "role_id": "worker" }
+                ], 
+                "catalog_entry_distro_id": "bluedata/hdp31-ambari27-7x",
+                "config_choice_selections": [
+                    {"choice_id": "apps", "selection_id": false },
+                    {"choice_id": "all_ha", "selection_id": false }, 
+                    {"choice_id": "kerberos", "selection_id": false }, 
+                    {"choice_id": "use_local_repo", "selection_id": false }
+                ]
+            }
+        }
+        
+        data = restClient.createCluster( zz)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
