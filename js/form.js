@@ -27,7 +27,6 @@ app.controller('MyCustomFormController', function($scope) {
     
     
     $scope.templateChange = function() {
-        $scope.config.clustername  = "zz"
         if ( $scope.config.selectedTemplate ) {
             $scope.config.clustername  = $scope.config.selectedTemplate['_embedded']['label']['name']
             currentTemplate = $scope.config.selectedTemplate['_embedded']['label']
