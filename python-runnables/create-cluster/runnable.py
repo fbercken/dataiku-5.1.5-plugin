@@ -14,12 +14,11 @@ class MyRunnable(Runnable):
         restClient = BlueData(self.config)
         restClient.connect()
         
-        clusterName = self.config['clustername']
-        clusterDesc = self.config['clusterdescription']
-        #clusterGroup = self.config['clusterdescription']
-        #data = restClient.createCluster( clusterName, clusterDesc, self.config.selectedTemplate )
+        clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
+        clusterGroup = self.config['selectedTemplate']
+        #data = restClient.createCluster( clusterLabel, clusterGroup)
         
         #data = restClient.createCluster()
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % clusterDesc 
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % clusterGroup 
