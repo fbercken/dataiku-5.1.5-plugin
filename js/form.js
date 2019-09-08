@@ -25,7 +25,7 @@ app.controller('MyCustomFormController', function($scope) {
     };
     
     
-    $scope.templateChange = function() {
+    var templateChange = function() {
         if ( $scope.config.selectedTemplate ) {
             $scope.config.clustername  = $scope.config.selectedTemplate['_embedded']['label']['name']
             currentTemplate = $scope.config.selectedTemplate['_embedded']['label']
@@ -54,7 +54,7 @@ app.controller('MyCustomFormController', function($scope) {
     
   //  updateTenants();
     $scope.$watch('config.selectedTenant', tenantChange);
-    $scope.$watch('config.selectedTemplate', $scope.templateChange);
+    $scope.$watch('config.selectedTemplate', templateChange);
 });
 
 
