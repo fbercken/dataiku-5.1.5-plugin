@@ -68,8 +68,7 @@ class BlueData(object):
         else: 
             return []
 
-    def createCluster(self, name, description, nodegroup):
-        label = { "name": name, "description": description }
+    def createCluster(self, label, nodegroup):
         data = { "label": label, "nodegroup": nodegroup}
         response = self._invoke("/api/v2/cluster/", data, "POST")
         if response.ok:
