@@ -74,7 +74,7 @@ class BlueData(object):
         response = self._invoke("/api/v2/cluster/", data, "POST")
         if response.ok:
             data = json.loads(response.content)
-            return data["_embedded"]["tenants"]
+            return data
         else: 
             return []
 
