@@ -1,6 +1,8 @@
 from blueRest import BlueData
 from dataiku.runnables import Runnable
 
+import json
+
 class MyRunnable(Runnable):
     def __init__(self, project_key, config, plugin_config):
         self.project_key = project_key
@@ -37,8 +39,10 @@ class MyRunnable(Runnable):
             }
         }
         
-        data = restClient.createCluster(zz)
+        data = json.dumps(zz)
+        
+        #data = restClient.createCluster(zz)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % zz 
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % data 
