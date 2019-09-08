@@ -28,9 +28,9 @@ app.controller('MyCustomFormController', function($scope) {
     
     $scope.templateChange = function() {
         if ( $scope.config.selectedTemplate ) {
-            currentTemplate = $scope.config.selectedTemplate
-            $scope.config.clustername = currentTemplate['_embedded']['label']['name']
-            $scope.config.clusterdescription = currentTemplate['_embedded']['label']['description']
+            currentTemplate = $scope.config.selectedTemplate['_embedded']['label']
+            $scope.config.clustername = currentTemplate['name']
+            $scope.config.clusterdescription = currentTemplate['description']
         }
     }
   
