@@ -15,10 +15,12 @@ class MyRunnable(Runnable):
         restClient.connect()
         
         clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
-        clusterGroup = self.config['selectedTemplate']
-        #data = restClient.createCluster( clusterLabel, clusterGroup)
+        clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
+        
+        clusterGroup = { "catalog_entry_distro_id": clusterSpec['catalog_entry_distro_id'], "config_choice_selections": clusterSpec['config_choice_selections'] }
+        data = restClient.createCluster( clusterLabel, clusterGroup)
         
         #data = restClient.createCluster()
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % clusterGroup 
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % data 
