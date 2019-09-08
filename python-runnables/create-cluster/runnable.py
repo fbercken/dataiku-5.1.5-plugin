@@ -29,15 +29,15 @@ class MyRunnable(Runnable):
                 ], 
                 "catalog_entry_distro_id": "bluedata/hdp31-ambari27-7x",
                 "config_choice_selections": [
-                    {"choice_id": "apps", "selection_id": false },
-                    {"choice_id": "all_ha", "selection_id": false }, 
-                    {"choice_id": "kerberos", "selection_id": false }, 
-                    {"choice_id": "use_local_repo", "selection_id": false }
+                    {"choice_id": "apps", "selection_id": False },
+                    {"choice_id": "all_ha", "selection_id": False }, 
+                    {"choice_id": "kerberos", "selection_id": False }, 
+                    {"choice_id": "use_local_repo", "selection_id": False }
                 ]
             }
         }
         
-        data = restClient.createCluster( zz)
+        data = restClient.createCluster(zz)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
