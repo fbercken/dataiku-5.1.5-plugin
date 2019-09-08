@@ -72,7 +72,7 @@ class BlueData(object):
         response = self._invoke("/api/v2/cluster/", clusterspec, "POST")
         if response.ok:
            # data = json.loads(response.content)
-            return "data"
+            return response.headers['Location']
         else: 
             return []
 
