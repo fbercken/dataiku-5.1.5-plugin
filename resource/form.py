@@ -14,9 +14,9 @@ def templates(config):
     restClient = BlueData(config)
     restClient.connect()
     tenant = config["selectedTenant"]
-    #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
-   # templates = restClient.getTemplates()
-    templates = restClient.getTenants()
+    restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
+    templates = restClient.getTemplates()
+    #templates = restClient.getTenants()
     return { "templates": templates }
 
 
