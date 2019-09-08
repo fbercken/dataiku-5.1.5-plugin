@@ -17,8 +17,8 @@ class BlueData(object):
                  response = requests.request( verb, self.base + path, headers=self.headers, data=json.dumps(payload), verify=False)
                  if response.ok:
                      return response
-                 else:
-                     response.raise_for_status()
+               #  else:
+                #     response.raise_for_status()
              except IOError:
                  count += 1
                  time.sleep(5)
