@@ -30,6 +30,9 @@ app.controller('MyCustomFormController', function($scope) {
             var currentTemplate = $scope.config.selectedTemplate['_embedded']['label']
             $scope.config.clustername = currentTemplate['name']
             $scope.config.clusterdescription = currentTemplate['description']
+        } else {
+            $scope.config.clustername = ""
+            $scope.config.clusterdescription = ""
         }
     }
   
