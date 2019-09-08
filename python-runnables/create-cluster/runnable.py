@@ -14,9 +14,8 @@ class MyRunnable(Runnable):
         restClient = BlueData(self.config)
         restClient.connect()
         
-        clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
-        
+        clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
         clusterGroup = { "catalog_entry_distro_id": clusterSpec['catalog_entry_distro_id'], "config_choice_selections": clusterSpec['config_choice_selections'] }
         data = restClient.createCluster( clusterLabel, clusterGroup)
         
