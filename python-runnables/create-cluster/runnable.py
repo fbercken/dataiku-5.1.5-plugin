@@ -37,8 +37,8 @@ class MyRunnable(Runnable):
             }
         }
         
-        data = restClient.createCluster(zz)
+    #    data = restClient.createCluster(zz)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % data 
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % zz 
