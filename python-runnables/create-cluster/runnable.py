@@ -15,8 +15,8 @@ class MyRunnable(Runnable):
         restClient.connect()
         
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
-        clusterLabel = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
-        clusterGroup = clusterSpec['nodegroup']
+        clusterSpec['label'] = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
+        #clusterGroup = clusterSpec['nodegroup']
         
         data = restClient.createCluster( clusterSpec)
 
