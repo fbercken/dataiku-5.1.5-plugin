@@ -24,6 +24,15 @@ app.controller('MyCustomFormController', function($scope) {
             $scope.templates = [] 
         }
     };
+    
+    
+    $scope.templateChange = function() {
+        if ( $scope.config.selectedTemplate ) {
+            currentTemplate = $scope.config.selectedTemplate
+            $scope.config.clustername = currentTemplate['_embedded']['label']['name']
+            $scope.config.clusterdescription = currentTemplate['_embedded']['label']['description']
+        }
+    }
   
 
     var tenantChange = function() {
@@ -31,6 +40,7 @@ app.controller('MyCustomFormController', function($scope) {
             $scope.callPythonDo({ "method": "templates" }).then(function(data) {
                 $scope.templates = data.templates;
                 $scope.config.selectedTemplate = $scope.templates[0]
+                templateChange()
                 console.log(data)
             }, function(data) {
                 $scope.templates = [];
@@ -41,13 +51,7 @@ app.controller('MyCustomFormController', function($scope) {
     };
     
     
-    var templateChange = function() {
-        if ( $scope.selectedTemplate ) {
-            currentTemplate = $scope.selectedTemplate
-            $scope.config.clustername = currentTemplate['_embedded']['label']['name']
-            $scope.config.clusterdescription = currentTemplate['_embedded']['label']['description']
-        }
-    }
+
     
   //  updateTenants();
     $scope.$watch('config.selectedTenant', tenantChange);
