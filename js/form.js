@@ -14,7 +14,6 @@ app.controller('MyCustomFormController', function($scope) {
                 $scope.config.sessionid = data.sessionid
                 $scope.config.selectedTenant = $scope.tenants[0]
                 $scope.tenantChange()
-                console.log(data)
             }, function(data) {
                 $scope.tenants = [];
                 $scope.templates = [] 
