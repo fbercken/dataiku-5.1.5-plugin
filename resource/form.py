@@ -15,8 +15,8 @@ def templates(config):
     restClient.connect()
     tenant = config["selectedTenant"]
     #restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
-    templates = restClient.getTemplates()
-    #applications = restClient.getTenants()
+   # templates = restClient.getTemplates()
+    templates = restClient.getTenants()
     return { "templates": templates }
 
 
