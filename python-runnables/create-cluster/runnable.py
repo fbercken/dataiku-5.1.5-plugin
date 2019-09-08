@@ -39,7 +39,7 @@ class MyRunnable(Runnable):
             }
         }
         
-        data = json.dumps(zz)
+        data = json.dumps(clusterSpec)
         
        # data = restClient.createCluster(zz)
 
