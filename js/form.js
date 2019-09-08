@@ -40,7 +40,7 @@ app.controller('MyCustomFormController', function($scope) {
             $scope.callPythonDo({ "method": "templates" }).then(function(data) {
                 $scope.templates = data.templates;
                 $scope.config.selectedTemplate = $scope.templates[0]
-                templateChange()
+                $scope.templateChange()
                 console.log(data)
             }, function(data) {
                 $scope.templates = [];
