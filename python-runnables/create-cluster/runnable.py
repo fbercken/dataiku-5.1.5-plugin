@@ -22,4 +22,4 @@ class MyRunnable(Runnable):
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % clusterLabel 
+        return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % clusterGroup 
