@@ -17,11 +17,11 @@ app.controller('MyCustomFormController', function($scope) {
                 console.log(data)
             }, function(data) {
                 $scope.tenants = [];
-                $scope.applications = [] 
+                $scope.templates = [] 
             });
         } else {
             $scope.tenants = [] 
-            $scope.applications = [] 
+            $scope.templates = [] 
         }
     };
   
@@ -29,14 +29,14 @@ app.controller('MyCustomFormController', function($scope) {
     var tenantChange = function() {
         if ( $scope.config.selectedTenant ) {
             $scope.callPythonDo({ "method": "applications" }).then(function(data) {
-                $scope.applications = data.applications;
-                $scope.config.selectedApplication = $scope.applications[0]
+                $scope.templates = data.templates;
+                $scope.config.selectedTemplate = $scope.templates[0]
                 console.log(data)
             }, function(data) {
-                $scope.applications = [];
+                $scope.templates = [];
             });
         } else {
-            $scope.applications = [] 
+            $scope.templates = [] 
         }
     };
     
