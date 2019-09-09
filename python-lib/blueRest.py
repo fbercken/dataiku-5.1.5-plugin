@@ -65,6 +65,14 @@ class BlueData(object):
             return data["_embedded"]["templates"]
         else: 
             return []
+        
+    def getCluster(selft,id):
+        response = self._invoke("/api/v2/cluster/" + id)
+        if response.ok:
+            return json.loads(response.content)
+        else:
+            return {}
+            
 
     def createCluster(self, clusterspec):
         #response = self._invoke("/api/v2/cluster/", clusterspec, "POST")
