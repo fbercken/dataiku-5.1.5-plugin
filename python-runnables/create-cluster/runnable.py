@@ -22,11 +22,11 @@ class MyRunnable(Runnable):
         clusterSpec['label'] = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
 
         clusterId = restClient.createCluster(clusterSpec)
-       # nodes = restClient.getNodes(clusterId)
+        nodes = restClient.getNodes(clusterId)
         
         result = []
-      #  for node in nodes:
-      #      result.APPEND( restClient.getService( node['_links']['self']['href'] ))
+        for node in nodes:
+            result.APPEND( restClient.getService( node['_links']['self']['href'] ))
         
         
         
