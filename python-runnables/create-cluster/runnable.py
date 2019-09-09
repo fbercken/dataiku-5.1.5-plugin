@@ -18,7 +18,7 @@ class MyRunnable(Runnable):
         
         restClient = BlueData(self.config)
         restClient.connect(tenant['label']['name'])
-       # restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
+
         
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
         clusterSpec['label'] = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
