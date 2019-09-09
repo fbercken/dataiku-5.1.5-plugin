@@ -41,10 +41,10 @@ class BlueData(object):
         self.headers['X-BDS-SESSION'] = self.sessionid 
 
 
-    def setTenant(self,tenantKey="/api/v2/tenant/1",tenantName="Site Admin"):
+ #   def setTenant(self,tenantKey="/api/v2/tenant/1",tenantName="Site Admin"):
       #  self.session["tenant"] = tenantKey
-        self.session["tenant_name"] = tenantName
-        response = self._invoke( "/api/v2/session/", self.session, "POST")
+ #       self.session["tenant_name"] = tenantName
+ #       response = self._invoke( "/api/v2/session/", self.session, "POST")
       #  self.headers['X-BDS-SESSION'] = response.headers['Location']
 
 
