@@ -19,7 +19,7 @@ class BlueData(object):
                      return response
                  else:
                     # response.raise_for_status()
-                    return "eee"
+                    return {"error": response.ok}
              except IOError:
                  count += 1
                  time.sleep(5)
