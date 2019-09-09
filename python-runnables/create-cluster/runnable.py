@@ -3,6 +3,7 @@ from dataiku.runnables import Runnable
 
 
 class MyRunnable(Runnable):
+    
     def __init__(self, project_key, config, plugin_config):
         self.config = config
         self.project_key = project_key
