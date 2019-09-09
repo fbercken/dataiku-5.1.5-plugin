@@ -39,10 +39,10 @@ class MyRunnable(Runnable):
             }
         }
         
-        data = json.dumps(clusterSpec)
+        data1 = json.dumps(clusterSpec)
         
         data = restClient.createCluster(clusterSpec)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % data 
+        return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % data1 
