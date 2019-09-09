@@ -66,7 +66,7 @@ class BlueData(object):
         else: 
             return []
         
-    def getCluster(selft,key):
+    def getCluster(self,key):
         response = self._invoke(key)
         if response.ok:
             return json.loads(response.content)
