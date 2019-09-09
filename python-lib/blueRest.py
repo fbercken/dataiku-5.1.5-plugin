@@ -65,13 +65,6 @@ class BlueData(object):
             return data["_embedded"]["templates"]
         else: 
             return []
-        
-    def getCluster(self,key):
-        response = self._invoke(key)
-        if response.ok:
-            return json.loads(response.content)
-        else:
-            return {}
             
 
     def createCluster(self, clusterspec):
@@ -81,5 +74,28 @@ class BlueData(object):
             return response.headers['Location']
         else: 
             return ["error"]
+        
+        
+    def getCluster(self,clusterid):
+        response = self._invoke(clusterid)
+        if response.ok:
+            return json.loads(response.content)
+        else:
+            return {} 
+        
+    def getNodes(self,clusterid):
+        response = self._invoke(clusterid + "/node")
+        if response.ok:
+            return json.loads(response.content)['_embedded']['nodes']
+        else:
+            return {} 
+        
+    def getServices(self, nodeid):
+        response = self._invoke(nodeid + "?services")
+        if response.ok:
+            return json.loads(response.content)['services']
+        else:
+            return {} 
+        
 
   
