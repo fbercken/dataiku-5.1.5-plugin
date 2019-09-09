@@ -13,9 +13,10 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
+        tenant = self.config["selectedTenant"]
+        
         restClient = BlueData(self.config)
         restClient.connect()
-        tenant = self.config["selectedTenant"]
         restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
         
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
@@ -27,7 +28,6 @@ class MyRunnable(Runnable):
         result = []
         for node in nodes:
             result.append( restClient.getServices( node['_links']['self']['href'] ))
-        
-        #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
+       
         
         return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % result 
