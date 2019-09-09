@@ -75,6 +75,6 @@ class BlueData(object):
            # data = json.loads(response.content)
             return response.headers['Location']
         else: 
-            return []
+            return ["error"]
 
   
