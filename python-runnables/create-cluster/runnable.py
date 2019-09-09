@@ -28,8 +28,6 @@ class MyRunnable(Runnable):
         for node in nodes:
             result.append( restClient.getServices( node['_links']['self']['href'] ))
         
-         
-
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
         return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % result 
