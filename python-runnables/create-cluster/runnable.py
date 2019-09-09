@@ -24,10 +24,14 @@ class MyRunnable(Runnable):
         clusterId = restClient.createCluster(clusterSpec)
         nodes = restClient.getNodes(clusterId)
         
+        result = []
+        for node in nodes:
+            result.APPEND( restClient.getService( node['_links']['self']['href'] ))
+        
         
         
         
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
-        return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % data 
+            return '<div>The Cluster has been created sucessfully:</div><pre class="debug">%s</pre>' % result 
