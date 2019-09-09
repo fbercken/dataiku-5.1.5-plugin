@@ -1,8 +1,13 @@
 
-//  Select the right JDK  if necessary
+// List installed JDK
+
+/usr/libexec/java_home -V
+
+// Select the right JDK if necessary (multi JDK installed )
+
 export JAVA_HOME=`/usr/libexec/java_home -v  1.8.0_222`
 
-// on mac to launch Dataiku application
+// on Mac to launch Dataiku application
 
 open -a DataScienceStudio
 
