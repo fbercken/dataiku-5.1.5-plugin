@@ -15,6 +15,8 @@ class MyRunnable(Runnable):
     def run(self, progress_callback):
         restClient = BlueData(self.config)
         restClient.connect()
+        tenant = self.config["selectedTenant"]
+        restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
         
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
        # del clusterSpec['cluster_type']
