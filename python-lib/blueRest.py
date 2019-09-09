@@ -19,11 +19,11 @@ class BlueData(object):
                      return response
                  else:
                     # response.raise_for_status()
-                    return {"error": response.ok}
+                    return {"ok": response}
              except IOError:
                  count += 1
                  time.sleep(5)
-        return {"error": "zz"}
+        return {"ok": "zz"}
 
 
     def __init__(self, config, retries=10):
