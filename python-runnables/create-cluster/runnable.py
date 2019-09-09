@@ -19,13 +19,14 @@ class MyRunnable(Runnable):
         restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
         
         clusterSpec = self.config['selectedTemplate']['_embedded']['clusterspec']
-       # del clusterSpec['cluster_type']
-        #del clusterSpec['_links']
         clusterSpec['label'] = { "name": self.config['clustername'], "description": self.config['clusterdescription'] }
 
-        
         clusterId = restClient.createCluster(clusterSpec)
-        data = restClient.getCluster(clusterId)
+        nodes = restClient.getNodes(clusterId)
+        
+        
+        
+        
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
