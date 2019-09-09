@@ -25,8 +25,8 @@ class MyRunnable(Runnable):
         nodes = restClient.getNodes(clusterId)
         
         result = []
-        for node in nodes:
-            result.APPEND( restClient.getService( node['_links']['self']['href'] ))
+      #  for node in nodes:
+      #      result.APPEND( restClient.getService( node['_links']['self']['href'] ))
         
         
         
