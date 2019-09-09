@@ -32,8 +32,6 @@ class BlueData(object):
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "site_admin_view": True }
         self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
-     #   if config['sessionid'] != "" :
-     #       self.headers["X-BDS-SESSION"] = config['sessionid']
 
 
     def connect(self):
