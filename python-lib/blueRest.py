@@ -35,10 +35,12 @@ class BlueData(object):
 
 
     def connect(self,tenantName="Site Admin"):
-        self.user["tenant_name"] = tenantName
+        #self.user["tenant_name"] = tenantName
         response = self._invoke( "/api/v2/session/", self.user, "POST")
         self.sessionid = response.headers['Location']
         self.headers['X-BDS-SESSION'] = self.sessionid 
+        self.session["tenant_name"] = tenantName
+        response = self._invoke( "/api/v2/session/", self.session, "POST")
 
 
  #   def setTenant(self,tenantKey="/api/v2/tenant/1",tenantName="Site Admin"):
