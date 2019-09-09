@@ -34,7 +34,7 @@ class BlueData(object):
         self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
 
 
-    def connect(self,tenantName="Site Admin):
+    def connect(self,tenantName="Site Admin"):
         self.user["tenant_name"] = tenantName
         response = self._invoke( "/api/v2/session/", self.user, "POST")
         self.sessionid = response.headers['Location']
