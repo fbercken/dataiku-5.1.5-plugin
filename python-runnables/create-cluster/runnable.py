@@ -43,7 +43,7 @@ class MyRunnable(Runnable):
         
         data1 = json.dumps(clusterSpec)
         
-        data = restClient.createCluster(zz)
+        data = restClient.createCluster(clusterSpec)
 
         #return '<div>The values in the form are:</div><pre class="debug">%s</pre>' % self.config % restClient.getTenants()
         
