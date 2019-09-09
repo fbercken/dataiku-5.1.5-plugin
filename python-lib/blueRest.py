@@ -18,18 +18,16 @@ class BlueData(object):
                  if response.ok:
                      return response
                  else:
-                    # response.raise_for_status()
-                    return {"ok": "eeee"}
+                    response.raise_for_status()
              except IOError:
                  count += 1
                  time.sleep(5)
-        return {"ok": "zz"}
+        return response
 
 
     def __init__(self, config, retries=10):
         self.config = config
         self.retries = retries
-        #self.sessionid = config['sessionid'] or ""
         self.base = "http://" + config['hostname'] + ":8080"
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "site_admin_view": True }
