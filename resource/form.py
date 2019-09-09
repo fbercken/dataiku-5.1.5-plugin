@@ -3,7 +3,6 @@ from blueRest import BlueData
 
 def connect(config):
     restClient = BlueData(config)
-    #{ "hostname": config["hostname"], "username": config["username"], "password": config["password"] } )
     restClient.connect()
     tenants = restClient.getTenants()
     sessionid = restClient.getSessionId()
@@ -13,9 +12,7 @@ def connect(config):
 def templates(config):
     tenant = config["selectedTenant"]
     restClient = BlueData(config)
-    #restClient.connect()
     restClient.connect( tenant['label']['name'] )
-   # restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
     templates = restClient.getTemplates()
     return { "templates": templates }
 
