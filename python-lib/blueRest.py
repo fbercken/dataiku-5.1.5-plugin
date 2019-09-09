@@ -73,7 +73,7 @@ class BlueData(object):
            # data = json.loads(response.content)
             return response.headers['Location']
         else: 
-            return ["error"]
+            return {}
         
         
     def getCluster(self,clusterid):
