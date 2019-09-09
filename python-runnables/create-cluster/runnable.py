@@ -1,20 +1,20 @@
 from blueRest import BlueData
 from dataiku.runnables import Runnable
 
-import json
 
 class MyRunnable(Runnable):
     def __init__(self, project_key, config, plugin_config):
         self.config = config
         self.project_key = project_key
-        self.plugin_config = plugin_config
+        self.plugin_config = plugin_config     
+       
         
     def get_progress_target(self):
         return None
 
     def run(self, progress_callback):
-        restClient = BlueData(self.config)
-        restClient.connect()
+        self.restClient = BlueData(self.config)
+        self.restClient.connect()
         tenant = self.config["selectedTenant"]
         restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
         
