@@ -26,7 +26,7 @@ class MyRunnable(Runnable):
         
         result = []
         for node in nodes:
-            result.append( restClient.getService( node['_links']['self']['href'] ))
+            result.append( restClient.getServices( node['_links']['self']['href'] ))
         
         
         
