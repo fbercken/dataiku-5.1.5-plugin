@@ -3,7 +3,7 @@
 
 /usr/libexec/java_home -V
 
-// Select the right JDK if necessary (multi JDK installed )
+// Select the right JDK if necessary (if multi JDK installed )
 
 export JAVA_HOME=`/usr/libexec/java_home -v  1.8.0_222`
 
