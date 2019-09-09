@@ -13,8 +13,8 @@ class MyRunnable(Runnable):
         return None
 
     def run(self, progress_callback):
-        self.restClient = BlueData(self.config)
-        self.restClient.connect()
+        restClient = BlueData(self.config)
+        restClient.connect()
         tenant = self.config["selectedTenant"]
         restClient.setTenant( tenant['_links']['self']['href'], tenant['label']['name'])
         
