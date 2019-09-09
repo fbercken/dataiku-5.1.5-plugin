@@ -78,7 +78,7 @@ class BlueData(object):
         #response = self._invoke( "/api/v2/cluster/", clusterspec, "POST")
         try:
             response = requests.request( "POST", self.base + "/api/v2/cluster/", headers=self.headers, data=json.dumps(clusterspec), verify=False)
-            return response.status_code
+            return response.headers
         except:
             return "error"
         
