@@ -76,18 +76,18 @@ class BlueData(object):
 
     def createCluster(self, clusterspec):
         #response = self._invoke( "/api/v2/cluster/", clusterspec, "POST")
-        try:
-            response = requests.request( "POST", self.base + "/api/v2/cluster/", headers=self.headers, data=json.dumps(clusterspec), verify=False)
-            return { "he": self.headers , "headers": response.headers, "code": response.status_code }
-        except:
-            return "error"
+       # try:
+       #     response = requests.request( "POST", self.base + "/api/v2/cluster/", headers=self.headers, data=json.dumps(clusterspec), verify=False)
+       #     return { "he": self.headers , "headers": response.headers, "code": response.status_code }
+      #  except:
+       #     return "error"
         
       #  return response
-        #response = self._invoke("/api/v2/cluster/", clusterspec, "POST")
-     #   if response.ok:
+        response = self._invoke("/api/v2/cluster/", clusterspec, "POST")
+        if response.ok:
            # data = json.loads(response.content)
-     #       return response.headers['Location']
-     #   else: 
-     #       return ["error"]
+            return response.headers['Location']
+        else: 
+            return ["error"]
 
   
