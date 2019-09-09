@@ -28,7 +28,7 @@ class BlueData(object):
     def __init__(self, config, retries=10):
         self.config = config
         self.retries = retries
-        self.base = "http://" + config['hostname'] + ":8080"
+        self.base = "http://" + config['hostname'] 
         self.user = { "name":  config['username'], "password": config['password'] }
         self.session = { "password": config['password'], "site_admin_view": True }
         self.headers =  { "Accept": "applicaiton/json", "Content-type": "application/json" }
