@@ -15,3 +15,6 @@ open -a DataScienceStudio
 // with project. So, I have to create a macro for using this capability (other possibility is to use a webapps)
 
 ![ScreenSho](./img/dataikuBlueData.png)
+
+
+To install the Plugin into Dataiku you have to fownload the dssPlugin_bluedataPugin.zip in the root folder.
