@@ -19,5 +19,8 @@ open -a DataScienceStudio
 
 To install the BlueData Plugin into Dataiku, execute the following steps:
 
-Download the dssPlugin_bluedataPugin.zip in the root folder.
-Menu Administration 
+- Download the dssPlugin_bluedataPugin.zip in the root folder.
+- Menu Administration > Tab Plugins > select Advanced button (top left)
+- Enter the zip file path into the popup window.
+
+
