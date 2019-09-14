@@ -1,7 +1,7 @@
 {
-    "pythonInterpreter": "PYTHON37",
-    "installCorePackages": false,
-    "installJupyterSupport": false,
+    "pythonInterpreter": "PYTHON36",
+    "installCorePackages": true,
+    "installJupyterSupport": true,
     "basePackagesInstallMethod": "PRE_BUILT",
     "conda": false
 }
